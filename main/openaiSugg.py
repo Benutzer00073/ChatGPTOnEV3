@@ -3,7 +3,7 @@ import sys
 import os
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import (QApplication, QHBoxLayout, QLabel, QLineEdit,
-                             QPushButton, QVBoxLayout, QWidget)
+                             QPushButton, QVBoxLayout, QWidget, QGridLayout)
 
 openai.api_key = open(os.getcwd() + '/api_key.txt', 'r').readline().rstrip()
 
@@ -19,20 +19,23 @@ class GPT3App(QWidget):
         self.get_response_button = QPushButton("Get Response", self)
         self.get_response_button.clicked.connect(self.get_response)
 
-        layout = QVBoxLayout(self)
-        layout.addWidget(QLabel("User Input:"))
-        layout.addWidget(self.input_text)
-        layout.addWidget(QLabel("GPT-3 Response:"))
-        layout.addWidget(self.output_text)
-        layout.addWidget(self.get_response_button)
+        vbox = QVBoxLayout(self)
+        vbox.addWidget(QLabel("User Input:"))
+        vbox.addWidget(self.input_text)
+        vbox.addWidget(QLabel("GPT-3 Response:"))
+        vbox.addWidget(self.output_text)
+        vbox.addWidget(self.get_response_button)
+
+        self.setLayout(vbox)
 
         self.setWindowTitle("GPT-3 App")
+        self.setGeometry(300, 300, 300, 200)
         self.show()
 
     def get_response(self):
         user_input = self.input_text.text()
         response = openai.Completion.create(
-            api_key=self.input_text,
+            api_key=openai.api_key,
             engine="text-davinci-003",
             prompt=user_input,
             temperature=1,

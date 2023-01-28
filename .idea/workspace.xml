@@ -7,8 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f3a35d1-57c5-418c-a483-364907d7081b" name="Changes" comment="28.01.23.2">
+    <list default="true" id="0f3a35d1-57c5-418c-a483-364907d7081b" name="Changes" comment="28.01.23.4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/openaiSugg.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/openaiSugg.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,11 +60,26 @@
       <option name="project" value="LOCAL" />
       <updated>1674910766006</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="28.01.23.4">
+      <created>1674910866545</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1674910866545</updated>
+    </task>
+    <task id="LOCAL-00003" summary="28.01.23.4">
+      <created>1674910891441</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1674910891441</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="28.01.23.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="28.01.23.2" />
+    <MESSAGE value="28.01.23.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="28.01.23.4" />
   </component>
 </project>
