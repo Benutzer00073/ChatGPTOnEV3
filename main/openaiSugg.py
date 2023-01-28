@@ -4,12 +4,13 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import (QApplication, QHBoxLayout, QLabel, QLineEdit,
                              QPushButton, QVBoxLayout, QWidget)
 
-openai.api_key = "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"
+
 
 class GPT3App(QWidget):
     def __init__(self):
         super().__init__()
 
+        self.input_text = QLineEdit(self)
         self.input_text = QLineEdit(self)
         self.input_text.returnPressed.connect(self.get_response)
         self.output_text = QLabel(self)
@@ -18,6 +19,8 @@ class GPT3App(QWidget):
         self.get_response_button.clicked.connect(self.get_response)
 
         layout = QVBoxLayout(self)
+        layout.addWidget(QLabel("API Key:"))
+        layout.addWidget(self.input_text)
         layout.addWidget(QLabel("User Input:"))
         layout.addWidget(self.input_text)
         layout.addWidget(QLabel("GPT-3 Response:"))
@@ -30,7 +33,8 @@ class GPT3App(QWidget):
     def get_response(self):
         user_input = self.input_text.text()
         response = openai.Completion.create(
-            engine="text-davinci-002",
+            api_key=self.input_text,
+            engine="text-davinci-003",
             prompt=user_input,
             temperature=1,
             max_tokens=4000
