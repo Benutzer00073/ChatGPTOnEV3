@@ -5,7 +5,6 @@ from PyQt5.QtWidgets import (QApplication, QHBoxLayout, QLabel, QLineEdit,
                              QPushButton, QVBoxLayout, QWidget)
 
 
-
 class GPT3App(QWidget):
     def __init__(self):
         super().__init__()

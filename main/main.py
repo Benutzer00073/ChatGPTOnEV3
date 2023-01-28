@@ -1,10 +1,9 @@
 import openai
 import tkinter as tk
 
-
 root = tk.Tk()
 
-API_KEY = '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'
+API_KEY = open(os.getcwd() + '/api_key.txt', 'r').readline().rstrip()
 
 
 def chat(prompt):
@@ -12,11 +11,7 @@ def chat(prompt):
     print(str(completions.choices[0].text))
 
 
-
 question = input("whats up")
 print(question)
 chat(question)
 question = " "
-
-
-
