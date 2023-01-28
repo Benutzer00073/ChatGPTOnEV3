@@ -1,8 +1,8 @@
-import openai
 import sys
 import os
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import (QApplication, QHBoxLayout, QLabel, QLineEdit,
+
+import openai
+from PyQt5.QtWidgets import (QApplication, QLabel, QLineEdit,
                              QPushButton, QVBoxLayout, QWidget, QGridLayout)
 
 openai.api_key = open(os.getcwd() + '/api_key.txt', 'r').readline().rstrip()

@@ -1,18 +1,15 @@
-import openai
-import tkinter as tk
 import os
 
-root = tk.Tk()
+import openai
 
-API_KEY = open(os.getcwd() + '/api_key.txt', 'r').readline().rstrip()
+openai.api_key = open(os.getcwd() + '/api_key.txt', 'r').readline().rstrip()
 
 
 def chat(prompt):
-    completions = openai.Completion.create(model="text-davinci-003", prompt=prompt, api_key=API_KEY, max_tokens=4000)
-    print(str(completions.choices[0].text))
+    completions = openai.Completion.create(model="text-davinci-003", prompt=prompt, max_tokens=4096, temperature=0)
+    print(completions["choices"][0]["text"])
 
 
-question = input("whats up")
+question = input("> ")
 print(question)
 chat(question)
-question = " "
