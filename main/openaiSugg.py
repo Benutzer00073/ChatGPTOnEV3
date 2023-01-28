@@ -1,5 +1,6 @@
 import openai
 import sys
+import os
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import (QApplication, QHBoxLayout, QLabel, QLineEdit,
                              QPushButton, QVBoxLayout, QWidget)
@@ -12,7 +13,6 @@ class GPT3App(QWidget):
         super().__init__()
 
         self.input_text = QLineEdit(self)
-        self.input_text = QLineEdit(self)
         self.input_text.returnPressed.connect(self.get_response)
         self.output_text = QLabel(self)
         self.output_text.setWordWrap(True)
@@ -20,8 +20,6 @@ class GPT3App(QWidget):
         self.get_response_button.clicked.connect(self.get_response)
 
         layout = QVBoxLayout(self)
-        layout.addWidget(QLabel("API Key:"))
-        layout.addWidget(self.input_text)
         layout.addWidget(QLabel("User Input:"))
         layout.addWidget(self.input_text)
         layout.addWidget(QLabel("GPT-3 Response:"))
