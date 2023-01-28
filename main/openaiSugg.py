@@ -4,6 +4,8 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import (QApplication, QHBoxLayout, QLabel, QLineEdit,
                              QPushButton, QVBoxLayout, QWidget)
 
+openai.api_key = open(os.getcwd() + '/api_key.txt', 'r').readline().rstrip()
+
 
 class GPT3App(QWidget):
     def __init__(self):
